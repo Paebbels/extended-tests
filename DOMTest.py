@@ -17,4 +17,4 @@ def getVHDLSources():
 @mark.xfail
 @mark.parametrize("file", getVHDLSources())
 def test_AllVHDLSources(file: str):
-	check_call(['ghdl-dom', file], stderr=STDOUT)
+	check_call(["ghdl-dom", "pretty", "-f", file], stderr=STDOUT)
